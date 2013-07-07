@@ -24,7 +24,7 @@ after the power is off. It makes them to be non-volatile drives.
 
 ## What is in an SSD?
 
-<img src='http://arangamani.net/blog/assets/images/ssd/1.jpg'/>
+<img src='http://www.arangamani.net/blog/assets/images/ssd/1.jpg'/>
 
 In the picture above, you can see the chips mounted in a board. All are
 light-weighted ICs which makes them more light in weight and the power
@@ -50,7 +50,7 @@ also be used in desktop computers.
 
 ## View of an SSD
 
-<img src='http://arangamani.net/blog/assets/images/ssd/2.jpg'/>
+<img src='http://www.arangamani.net/blog/assets/images/ssd/2.jpg'/>
 
 In the Image above, you can see that it exactly looks like a traditional hard
 drive. It has the power connectors and data cables and it is compatible with
