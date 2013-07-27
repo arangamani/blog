@@ -28,7 +28,7 @@ project for easier understanding of the examples here. My `.pryrc` sets
 initializes my project by setting up the credentials.
 
 
-<img src='/assets/images/pry/initial.png'/>
+<img src='/blog/assets/images/pry/initial.png'/>
 
 
 The `@client` instance variable is an object to the `Client` class. For example,
@@ -39,7 +39,7 @@ for calling methods on the `Job` class. With the use of Pry, you can easily
 change the scope so you do not have to use the chain of objects.
 
 
-<img src='/assets/images/pry/cd_and_ls.png'/>
+<img src='/blog/assets/images/pry/cd_and_ls.png'/>
 
 
 The `cd` command (just like changing the directory in Unix systems) can be used
@@ -49,7 +49,7 @@ available in current scope. If you want just the methods just do `ls -m`.
 Now that we have changed the scope to the `job` object, we can call the methods
 on that object by simply calling the method by the method name.
 
-<img src='/assets/images/pry/run.png'/>
+<img src='/blog/assets/images/pry/run.png'/>
 
 ### Methods `show-method` and `show-doc`
 
@@ -58,7 +58,7 @@ The `show-method` can be used for displaying the method. Similarly, the
 method.
 
 
-<img src='/assets/images/pry/show_method_and_show_doc.png'/>
+<img src='/blog/assets/images/pry/show_method_and_show_doc.png'/>
 
 
 The `show-method` can also be used for system methods. For example, the `rm_rf`
@@ -66,7 +66,7 @@ method in the `FileUtils` class can be viewed simply by calling `show-method
 FileUtils#rm_rf`.
 
 
-<img src='/assets/images/pry/system_methods.png'/>
+<img src='/blog/assets/images/pry/system_methods.png'/>
 
 
 ### Editing of methods and live reload of code
@@ -75,13 +75,13 @@ change, you can simly use the `edit` method and specify the method name. It
 will open your default editor. Since I have my default editor set to vim,
 this example opens up vim in the shell itself.
 
-<img src='/assets/images/pry/before_edit.png'/>
+<img src='/blog/assets/images/pry/before_edit.png'/>
 
 
 In the following screenshot, you can see that the editor is opened and the
 cursor is pointing to the correct method.
 
-<img src='/assets/images/pry/edit.png'/>
+<img src='/blog/assets/images/pry/edit.png'/>
 
 
 Once the the edit is completed and the file is saved, the editor is closed and
@@ -93,7 +93,7 @@ _Note:_ Do not wonder why there is a red line at the 80 character mark. I
 follow the ruby style guide of limiting character width to 80 characters. I use
 the `colorcolumn` feature in Vim.
 
-<img src='/assets/images/pry/after_edit.png'/>
+<img src='/blog/assets/images/pry/after_edit.png'/>
 
 
 Bingo! The code change can be seen clearly.
