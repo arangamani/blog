@@ -24,8 +24,8 @@ Once you are in the Pry session, you can change your scope to any Object you
 want. During the development of my project
 [jenkins_api_client](http://github.com/arangamani/jenkins_api_client) I often
 use interactive Pry session to debug the code. Please take a quick look at my
-project for easier understanding of the examples here. My `.pryrc` sets
-initializes my project by setting up the credentials.
+project for easier understanding of the examples here. My `.pryrc` initializes
+my project by setting up the credentials.
 
 
 <img src='/blog/assets/images/pry/initial.png'/>
