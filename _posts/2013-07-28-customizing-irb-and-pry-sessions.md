@@ -47,20 +47,20 @@ current_dir = Dir.pwd
 # code inside this if block will load the gem project and then initialize
 # the client.
 if current_dir =~ /^(.*?\/jenkin_api_client)/
-    # YAML is required to parse the credentials from the login.yml file
-    require"yaml"
-    # Obtain the library path of your ruby project
-    path = "#{$1}/lib"
-    # Insert this path to the front the $LOAD_PATH
-    $LOAD_PATH.unshift(path)
+  # YAML is required to parse the credentials from the login.yml file
+  require"yaml"
+  # Obtain the library path of your ruby project
+  path = "#{$1}/lib"
+  # Insert this path to the front the $LOAD_PATH
+  $LOAD_PATH.unshift(path)
 
-    # Load the project as a rubygem
-    require "jenkins_api_client"
-    # Initialize the client by loading credentials from the yaml file
-    @client = JenkinsApi::Client.new(
-        YAML.load_file(File.expand_path("~/.jenkins_api_client/login.yml"))
-    )
-    puts "logged-in to the Jenkins API, use the '@client' variable to use it"
+  # Load the project as a rubygem
+  require "jenkins_api_client"
+  # Initialize the client by loading credentials from the yaml file
+  @client = JenkinsApi::Client.new(
+      YAML.load_file(File.expand_path("~/.jenkins_api_client/login.yml"))
+  )
+  puts "logged-in to the Jenkins API, use the '@client' variable to use it"
 # Custmoizations required for my jenkins_launcher project
 elsif current_dir =~ /^(.*?\/jenkins_launcher)/
     ...
