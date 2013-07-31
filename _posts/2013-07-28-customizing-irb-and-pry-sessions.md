@@ -8,30 +8,68 @@ tags : [pry, irb]
 
 <link href="/blog/assets/css/syntax.css" rel="stylesheet" type="text/css"/>
 
-# Customizing IRB and Pry sessions to meet your needs and confort
-
 ## The .irbrc file
-The `.irbrc` file is usually placed in your home directory (`~/.irbc`). This file
-is just a regular ruby file and you an write any arbitrary ruby code that you
-want to be executed before the IRB session is loaded.
+The `.irbrc` file is usually placed in your home directory (`~/.irbc`). This
+file is just a regular ruby file and you an write any arbitrary ruby code that
+you want to be executed before the IRB session is loaded.
 
 ## The .pryrc file
 The `.pryrc` file is very similar to the `.irbrc` file and is placed in your
 home directory (`~/.pryrc`).
 
-## Customize the loading of gems
+## Customizing the session
 If you use a particular gem every time you are in an IRB or a Pry session, you
 can simply include that in your `.irbrc` or `.pryrc` file. An example for this
 would be the pretty print (pp) library. Just add the require statement in the
 rc file that will load this library.
 
 {% highlight ruby %}
-require 'pp'
+require "pp"
 {% endhighlight %}
 
-## Automatically load the environment for your project based on your current
-working directory
+_Note:_ The following customizations are IRB specific and Pry has most of them
+in-built.
 
+If you use IRB instead of Pry, you will have to install some additional gems to
+get the coloring enabled in the output. Pry has this in-built so you do not
+have to do any additional work. To enable coloring in IRB, the `wirble` gem
+should be installed. The following simple configuration will enable coloring
+using the `wirble` gem.
+
+{% highlight ruby %}
+require "wirble"
+
+# Initialize Wirble
+Wirble.init
+
+# Enable colored output
+WIrble.colorize
+{% endhighlight %}
+
+Tab completion in IRB can be enabled by
+{% highlight ruby %}
+require "irb/completion"
+{% endhighlight %}
+
+Automatic indentation can be set by
+{% highlight ruby %}
+IRB.conf[:AUTO_INDENT] = true
+{% endhighlight %}
+
+If you would like to save the history between IRB sessions, it can be achieved
+by
+{% highlight ruby %}
+require "irb/ext/save-hostory"
+# Number of lines/commands to save
+IRB.conf[:SAVE_HISTORY] = 100
+# The location to save the history file
+IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
+{% endhighlight %}
+
+## Per-project customization
+
+The `.[irb|pry]rc` file can be customized to automatically load the environment
+for your project based on your current working directory.
 Whenever I work with Ruby projects, I keep a separate window open for my pry
 session. I do not want to load and initialize the project every time I enter te
 session. I usually have the credentials saved separately in a YAML file. So in
@@ -69,10 +107,18 @@ elsif current_dir =~ /^(.*?\/some_other_project)/
 end
 {% endhighlight %}
 
-    Kannans-MacBook-Pro:jenkins_api_client kannanmanickam$ pry
-    logged-in to the Jenkins API, use the '@client' variable to use the client
-    Welcome back to the IRB session, Kannan!
-    [1] pry(main)>
+Now that I have my rc file is setup to prepare my project when I am in my
+[jenkins_api_client](http://www.arangamani.net/jenkins_api_client) project
+directory, when I enter the Pry session, my project is loaded and ready for me
+to play with. If I change my directory to a different project, that project
+will be loaded instead.
+
+{% highlight bash %}
+Kannans-MacBook-Pro:jenkins_api_client kannanmanickam$ pry
+logged-in to the Jenkins API, use the '@client' variable to use the client
+Welcome back to the IRB session, Kannan!
+[1] pry(main)>
+{% endhighlight %}
 
 It is as simple as adding another condition to match your project and name do
 the initializations to load your project. The above method will work even if
