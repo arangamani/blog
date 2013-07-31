@@ -10,18 +10,20 @@ tags : [pry, irb]
 
 ## The .irbrc file
 The `.irbrc` file is usually placed in your home directory (`~/.irbc`). This
-file is just a regular ruby file and you an write any arbitrary ruby code that
+file is just a regular ruby file and you can write any arbitrary ruby code that
 you want to be executed before the IRB session is loaded.
 
 ## The .pryrc file
 The `.pryrc` file is very similar to the `.irbrc` file and is placed in your
-home directory (`~/.pryrc`).
+home directory (`~/.pryrc`) and this file is loaded before the Pry session is
+started.
 
 ## Customizing the session
 If you use a particular gem every time you are in an IRB or a Pry session, you
-can simply include that in your `.irbrc` or `.pryrc` file. An example for this
+can simply include that in your `.irbrc` or `.pryrc` file so you do not have to
+manually require that gem every time you enter the session. An example for this
 would be the pretty print (pp) library. Just add the require statement in the
-rc file that will load this library.
+rc file and that will load this library whenever you enter the session.
 
 {% highlight ruby %}
 require "pp"
@@ -43,7 +45,7 @@ require "wirble"
 Wirble.init
 
 # Enable colored output
-WIrble.colorize
+Wirble.colorize
 {% endhighlight %}
 
 Tab completion in IRB can be enabled by
@@ -61,6 +63,7 @@ by
 {% highlight ruby %}
 require "irb/ext/save-hostory"
 # Number of lines/commands to save
+
 IRB.conf[:SAVE_HISTORY] = 100
 # The location to save the history file
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
@@ -73,7 +76,7 @@ for your project based on your current working directory.
 Whenever I work with Ruby projects, I keep a separate window open for my pry
 session. I do not want to load and initialize the project every time I enter te
 session. I usually have the credentials saved separately in a YAML file. So in
-the `.pryrc` file, I get th current working directory and based on the
+the `.pryrc` file, I get the current working directory and based on the
 directory, I load and initialize my project. The object I initialize in the rc
 file will be available inside the irb/pry session, which I can then use for my
 interactions.
@@ -107,11 +110,11 @@ elsif current_dir =~ /^(.*?\/some_other_project)/
 end
 {% endhighlight %}
 
-Now that I have my rc file is setup to prepare my project when I am in my
+Now that I have my rc file setup to prepare my project when I am in my
 [jenkins_api_client](http://www.arangamani.net/jenkins_api_client) project
 directory, when I enter the Pry session, my project is loaded and ready for me
-to play with. If I change my directory to a different project, that project
-will be loaded instead.
+to play with. If I change my directory to a different project and enter irb/pry
+session again, that project will be loaded instead.
 
 {% highlight bash %}
 Kannans-MacBook-Pro:jenkins_api_client kannanmanickam$ pry
