@@ -76,7 +76,7 @@ Here is a simple valid JSON file:
 
 Running the lint tool against this file gives:
 
-{% highlight ruby %}
+{% highlight bash %}
 Kannans-MacBook-Pro:~ kannanmanickam$ jsonlint test.json
 Syntax OK
 {% endhighlight %}
@@ -92,7 +92,7 @@ Here is a JSON file that misses a "}"
 
 Running the list tool against this file gives:
 
-{% highlight ruby %}
+{% highlight bash %}
 Kannans-MacBook-Pro:~ kannanmanickam$ jsonlint test.json
 Syntax Error!
 {% endhighlight %}
