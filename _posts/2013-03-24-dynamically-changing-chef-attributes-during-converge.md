@@ -6,6 +6,8 @@ tags : [chef]
 ---
 {% include JB/setup %}
 
+<link href="/blog/assets/css/syntax.css" rel="stylesheet" type="text/css"/>
+
 ## Background
 
 In Chef, when a resource is defined all its attributes are evaluated during

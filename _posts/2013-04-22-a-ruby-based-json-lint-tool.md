@@ -6,6 +6,8 @@ tags : [ruby, json]
 ---
 {% include JB/setup %}
 
+<link href="/blog/assets/css/syntax.css" rel="stylesheet" type="text/css"/>
+
 ## Overview
 
 It is easy to make mistakes in a JSON file by simply missing a comma or other
