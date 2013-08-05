@@ -15,9 +15,12 @@ compile time and the execution of the resource takes place in converge phase.
 So if the value of a particular attribute is changed in converge
 (and not in compile) the resource will be executed with the old value.
 
-_Note:_ In Chef 11, there is a feature called
+_Note:_ In Chef 11, there is a feature coming up called
 [lazy](http://tickets.opscode.com/browse/CHEF-1814) evaluator which will allow
 you to evaluate an attribute during converge instead of compile phase.
+_Update:_ This feature is implemented and the documentation can be found
+[here](http://docs.opscode.com/resource_common.html#lazy-attribute-evaluation).
+
 
 ## Example problem:
 Lets consider this situation where there are two steps involved in a recipe.
