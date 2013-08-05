@@ -18,6 +18,8 @@ So if the value of a particular attribute is changed in converge
 _Note:_ In Chef 11, there is a feature coming up called
 [lazy](http://tickets.opscode.com/browse/CHEF-1814) evaluator which will allow
 you to evaluate an attribute during converge instead of compile phase.
+
+
 _Update:_ This feature is implemented and the documentation can be found
 [here](http://docs.opscode.com/resource_common.html#lazy-attribute-evaluation).
 
