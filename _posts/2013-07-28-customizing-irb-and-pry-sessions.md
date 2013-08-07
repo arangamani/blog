@@ -61,7 +61,7 @@ IRB.conf[:AUTO_INDENT] = true
 If you would like to save the history between IRB sessions, it can be achieved
 by
 {% highlight ruby %}
-require "irb/ext/save-hostory"
+require "irb/ext/save-history"
 # Number of lines/commands to save
 
 IRB.conf[:SAVE_HISTORY] = 100
