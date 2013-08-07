@@ -119,7 +119,7 @@ session again, that project will be loaded instead.
 {% highlight bash %}
 Kannans-MacBook-Pro:jenkins_api_client kannanmanickam$ pry
 logged-in to the Jenkins API, use the '@client' variable to use the client
-Welcome back to the IRB session, Kannan!
+Welcome back to the Pry session, Kannan!
 [1] pry(main)>
 {% endhighlight %}
 
